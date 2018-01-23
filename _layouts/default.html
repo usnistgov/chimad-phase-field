@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include head.html %}
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url={{ site.redirect }}{{ page.url }}">
+    <script type="text/javascript">
+      window.location.href = "{{ site.redirect }}{{ page.url }}"
+    </script>
+    <title>Page Redirection</title>
   </head>
   <body>
-    <header>
-      {% include navbar.html %}
-    </header>
-    <main>
-      {{ content }}
-    </main>
-    <footer>
-      {% include footer.html %}
-    </footer>
+    If you are not redirected automatically, follow this <a href="{{ site.redirect }}{{ page.url }}">link to example</a>.
   </body>
 </html>
