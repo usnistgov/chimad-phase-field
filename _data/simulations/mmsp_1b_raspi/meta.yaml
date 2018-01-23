@@ -1,0 +1,49 @@
+benchmark:
+  id: 1b
+  version: 1
+data:
+- name: timestep
+  values: 0.00104167
+- format:
+    parse:
+      free_energy: number
+      time: number
+    type: csv
+  name: free_energy
+  transform:
+  - as: y
+    expr: datum.free_energy
+    type: formula
+  - as: x
+    expr: datum.time
+    type: formula
+  type: line
+  url: https://gist.githubusercontent.com/tkphd/93af8ee482b5a66b04ff7284e61ef716/raw/c4b4e8c606a8fe209d7a0ea42e4267f3c53056e2/mmsp_1b_raspi_results.csv
+- name: run_time
+  values:
+  - sim_time: 4166.67
+    wall_time: 293029.66
+- name: memory_usage
+  values:
+  - unit: KB
+    value: 8808
+metadata:
+  author:
+    email: trevor.keller@nist.gov
+    first: Trevor
+    github_id: tkphd
+    last: Keller
+  hardware:
+    acc_architecture: none
+    clock_rate: 0
+    cores: 18
+    cpu_architecture: armv7l
+    nodes: 1
+  implementation:
+    container_url: ''
+    name: mmsp
+    repo:
+      url: https://github.com/mesoscale/MMSP-spinodal-decomposition-benchmark/tree/master/no-flux/
+      version: 8be003758f9d1d4ee2f1e3ccaeec3a16199a0c62
+  summary: Raspberry Pi 3 cluster benchmark with MMSP, no-flux domain
+  timestamp: Sat, 04 Feb 2017 12:48:15 +0000

@@ -1,0 +1,123 @@
+---
+title: "Community Members"
+layout: default
+comment: >-
+  Active members of the benchmarking effort
+---
+
+{% include title.html %}
+
+<div class="container top-bar-thin">
+  <div class="row small-buffer">
+    <div class="col s12 m12 l12 xl2">
+      <h5 class="sideheader">
+        Members
+      </h5>
+    </div>
+    <div class="col s12 m12 l12 xl10">
+      {% for item in site.data.community %}
+        {% capture github_url %}https://github.com/{{ item.github_id }}{% endcapture %}
+        <div class="col s12 m6 l6 xl4">
+          <div class="card small light-green lighten-4">
+            <div class="card-content community">
+
+              <a name="{{ item.name | strip | downcase | replace:' ','-' }}">
+
+              <span class="card-title">
+                <a href="{% if item.home %}{{ item.home }}{% else %}{{ github_url }}{% endif %}"
+                   target="_blank"
+                   title="home page">
+                  {{ item.name }}
+                </a>
+              </span>
+
+              <img class="circle"
+                   src="{{ item.avatar }}"
+                   alt="">
+              </a>
+
+              <br>
+              <a href="mailto:{{ item.email }}"
+                 target="blank_"
+                 title="email">
+                <i class="small material-icons">
+                  email
+                </i>
+              </a>
+              {% if item.github_id %}
+                <a href="{{ github_url }}"
+                   target="blank_"
+                   title="github">
+                  <i class="small material-icons">
+                    <img src="{{ site.baseurl }}/images/github-blue.svg"
+                         class="github"
+                         alt="github">
+                  </i>
+                </a>
+              {% endif %}
+              {% if item.twitter %}
+                <a href="https://twitter.com/{{ item.twitter }}"
+                   target="blank_"
+                   title="twitter">
+                  <i class="small material-icons">
+                    <img src="{{ site.baseurl }}/images/twitter-blue.svg"
+                         alt="twitter"
+                         class="github">
+                  </i>
+                </a>
+              {% endif %}
+              {% if item.scholar %}
+                <a href="https://scholar.google.com/citations?user={{ item.scholar }}"
+                   target="blank_"
+                   title="scholar">
+                  <i class="small material-icons">
+                    <img src="{{ site.baseurl }}/images/gscholar-button_inactive.svg"
+                         alt="scholar"
+                         class="github">
+                  </i>
+                </a>
+              {% endif %}
+              {% if item.orcid %}
+                <a href="https://orcid.org/{{ item.orcid }}"
+                   target="blank_"
+                   title="orcid">
+                  <i class="small material-icons">
+                    <img src="{{ site.baseurl }}/images/vector_iD_icon.svg"
+                         alt="orcid"
+                         class="github">
+                  </i>
+                </a>
+              {% endif %}
+              <p>
+                {{ item.text }}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row small-buffer">
+    <div class="col s12 m12 l10 xl10 offset-l2 offset-xl2" id="overview">
+      <div class="flow-text">
+        Is your sketch missing from the gallery? Please e-mail the
+        <a href="mailto:{{ site.admin_email }}">
+          site admin
+        </a>
+        with the following details:
+        <ul class="comment-list">
+          <li>Your name, e-mail address, and home page</li>
+          <li>Your professional handles on GitHub and social media
+          (<em>e.g.</em> Twitter)</li>
+          <li>A link to your preferred photograph or avatar</li>
+          <li>A biographical sketch concisely summarizing your
+          engagement with phase-field methods</li>
+        </ul>
+        You will be contacted for any necessary clarification.
+      </div>
+    </div>
+  </div>
+</div>

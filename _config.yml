@@ -1,2 +1,35 @@
 baseurl: '/chimad-phase-field'
 redirect: 'https://pages.nist.gov/pfhub'
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+exclude:
+  - "*.ipynb"
+  - "*.ipynb.raw.html"
+  - vendor
+  - template.ipynb.md
+
+links:
+  live_url: https://pages.nist.gov/pfhub
+  raw_name: pfhub
+  contributors: https://github.com/usnistgov/pfhub/graphs/contributors
+  license: https://github.com/usnistgov/pfhub/blob/nist-pages/LICENSE
+  repo: usnistgov/pfhub
+  github: https://github.com/usnistgov/pfhub
+  chat: https://gitter.im/usnistgov/chimad-phase-field
+  staticman_api: https://api.staticman.net/v2/entry/usnistgov/pfhub/master/simulations
+  simmeta: https://github.com/usnistgov/pfhub/blob/master/_data/simulations
+  maillist: chimad-phase-field@list.nist.gov
+  maillist_subscribe: chimad-phase-field+subscribe@list.nist.gov
+  maillist_unsubscribe: chimad-phase-field+unsubscribe@list.nist.gov
+  maillist_archive: https://groups.google.com/a/list.nist.gov/forum/#!forum/chimad-phase-field
+
+
+title: "PFHub"
+subtitle: "Phase Field Community Hub"
+
+plugins: [jekyll-coffeescript]
+
+admin_email: 'chimad-phase-field-admin@list.nist.gov'

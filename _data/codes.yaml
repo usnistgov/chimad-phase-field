@@ -1,0 +1,148 @@
+---
+# Codes for automated code descriptors on front page
+
+- name: Moose
+  uploads: true
+  logo:  http://mooseframework.org/static/media/cache/79/7e/797e5adef36a8c79400b1e09c0836407.jpg
+  description: A multiphysics finite element object oriented simulation environment written in C++.
+  home_page: http://mooseframework.org/
+  badges:
+    - href: https://raw.githubusercontent.com/idaholab/moose/master/LICENSE.rst
+      src: https://img.shields.io/badge/license-lgpl-blue.svg
+    - href: https://www.openhub.net/p/mooseframework
+      src: https://www.openhub.net/p/mooseframework/widgets/project_thin_badge.gif
+  examples:
+    - href: http://mooseframework.org/wiki/MooseTutorials/IronChromiumDecomposition/
+      name: Fe-Cr Phase Decomposition
+    - href: https://github.com/idaholab/moose/tree/devel/modules/phase_field/examples/cahn-hilliard
+      name: Cahn-Hilliard
+    - href: https://github.com/idaholab/moose/tree/devel/modules/phase_field/examples/grain_growth
+      name: Grain Growth
+    - href: https://github.com/idaholab/moose/tree/devel/modules/phase_field/examples/nucleation
+      name: Nucleation
+
+- name: FEniCS
+  uploads: false
+  home_page: http://fenicsproject.org/
+  logo: http://hplgit.github.io/fenics-mixed/doc/web/fig/fenics_logo.png
+  description: >-
+    The FEniCS Project is a collection of free software with an
+    extensive list of features for automated, efficient solution of
+    differential equations written in C++
+  badges:
+    - href: http://www.gnu.org/licenses/lgpl.html
+      src: https://img.shields.io/badge/license-lgpl-blue.svg
+    - href: https://www.openhub.net/p/fenics
+      src: https://www.openhub.net/p/fenics/widgets/project_thin_badge.gif
+  examples:
+    - href: http://fenicsproject.org/documentation/dolfin/1.1.0/python/demo/pde/cahn-hilliard/python/documentation.html
+      name: Cahn-Hilliard
+
+- name: FiPy
+  uploads: true
+  logo: http://i.imgur.com/q6yF0ce.png
+  description: A finite volume PDE solver written in Python.
+  home_page: http://www.ctcms.nist.gov/fipy/
+  badges:
+    - href: https://raw.githubusercontent.com/usnistgov/fipy/master/LICENSE.rst
+      src: https://img.shields.io/badge/license-nist-blue.svg
+    - href: https://www.openhub.net/p/fipy
+      src: https://www.openhub.net/p/fipy/widgets/project_thin_badge.gif
+    - href: https://travis-ci.org/usnistgov/fipy
+      src: https://travis-ci.org/usnistgov/fipy.svg
+    - href: https://pypi.python.org/pypi/FiPy/3.1
+      src: https://img.shields.io/pypi/dm/FiPy.svg?style=flat
+    - href: http://depsy.org/package/python/FiPy
+      src: http://depsy.org/api/package/pypi/FiPy/badge.svg
+  examples:
+    - name: Cahn-Hilliard
+      href: http://www.ctcms.nist.gov/fipy/examples/cahnHilliard/generated/examples.cahnHilliard.mesh2DCoupled.html
+    - name: Quaternary
+      href: http://www.ctcms.nist.gov/fipy/examples/phase/generated/examples.phase.quaternary.html
+    - name: Anisotropy
+      href: http://www.ctcms.nist.gov/fipy/examples/phase/generated/examples.phase.anisotropy.html
+    - name: Polycrystal
+      href: http://www.ctcms.nist.gov/fipy/examples/phase/generated/examples.phase.polyxtalCoupled.html
+  hackathon:
+    - name: Hackathon repo
+      href: https://github.com/guyer/phase_field_hackathon_I
+    - name: Automated Benchmark 1
+      href: https://github.com/usnistgov/FiPy-spinodal-decomposition-benchmark/tree/master
+
+- name: MMSP
+  uploads: true
+  home_page: https://github.com/mesoscale/mmsp
+  description: >-
+    Provides a simple, consistent, and extensible programming
+    interface for all grid and mesh based microstructure evolution
+    methods written in C++.
+  badges:
+    - href: https://raw.githubusercontent.com/mesoscale/mmsp/master/LICENSE.rst
+      src: https://img.shields.io/badge/license-gpl-blue.svg
+    - href: https://www.openhub.net/p/mmsp
+      src: https://www.openhub.net/p/mmsp/widgets/project_thin_badge.gif
+    - href: https://travis-ci.org/mesoscale/mmsp
+      src: https://travis-ci.org/mesoscale/mmsp.svg
+  examples:
+    - name: Cahn-Hilliard
+      href: https://github.com/mesoscale/mmsp/tree/master/examples/phase_transitions/cahn-hilliard/convex_splitting
+    - name: Ostwald Ripening
+      href: https://github.com/mesoscale/mmsp/tree/master/examples/coarsening/ostwald_ripening/isotropic/phase_field
+    - name: Anisotropy
+      href: https://github.com/mesoscale/mmsp/tree/master/examples/phase_transitions/solidification/anisotropic
+    - name: Grain growth
+      href: https://github.com/mesoscale/mmsp/tree/master/examples/coarsening/grain_growth/isotropic/sparsePF
+  hackathon:
+    - name: Hackathon repo
+      href: https://github.com/tkphd/CHiMaD-Hackathon
+    - name: Automated Benchmark 1
+      href: https://github.com/mesoscale/MMSP-spinodal-decomposition-benchmark/tree/master
+
+- name: PRISMS-PF
+  uploads: true
+  home_page: https://github.com/prisms-center/phaseField
+  description: >-
+    A finite element code implementing various phase field and coupled
+    mechanics problems built on top of deal.II.
+  badges:
+    - href: https://raw.githubusercontent.com/prisims-center/master/LICENSE
+      src: https://img.shields.io/badge/license-lgpl-blue.svg
+    - href: https://www.openhub.net/p/prismsPF
+      src: https://www.openhub.net/p/prismsPF/widgets/project_thin_badge.gif
+    - href: https://travis-ci.org/prisms-center/phaseField
+      src: https://travis-ci.org/prisms-center/phaseField.svg?branch=master
+  examples:
+    - href: https://github.com/prisms-center/phaseField/tree/master/applications/cahnHilliard
+      name: Cahn-Hilliard
+    - href: https://github.com/prisms-center/phaseField/tree/master/applications/CHAC_anisotropyRegularized
+      name: Regularized Anisotropy
+    - name: Precipitation (WBM)
+      href: https://github.com/prisms-center/phaseField/tree/master/applications/precipitateEvolution
+    - href: https://github.com/prisms-center/phaseField/tree/master/applications/singlePrecipitateKKS
+      name: Precipitation (KKS)
+  hackathon:
+    - href: https://github.com/prisms-center/phaseField/tree/master/applications/CHiMaD_benchmark1a
+      name: CHiMaD Benchmark 1a
+    - href: https://github.com/prisms-center/phaseField/tree/master/applications/CHiMaD_benchmark2a
+      name: CHiMaD Benchmark 2a
+
+- name: OpenPhase
+  uploads: false
+  logo: ../images/openphase.png
+  home_page: http://www.openphase.de/
+  description: >-
+    An open-source software library for phase-field simulation of
+    microstructure formation in multi-phase multi-component materials
+    written in object oriented C++.
+  badges:
+    - href: http://www.openphase.de/license/index.html
+      src: https://img.shields.io/badge/license-gpl-blue.svg
+  examples:
+    - href: http://www.openphase.de/examples/index.html
+      name: Single Grain Growth
+    - href: http://www.openphase.de/examples/index.html
+      name: Normal Grain Growth
+    - href: http://www.openphase.de/examples/index.html
+      name: Elasticity
+    - name: Dendritic Growth
+      href: http://www.openphase.de/examples/index.html

@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12 xl8 offset-xl2" id="overview">
+      <h2 class="header">
+        Submit a new benchmark result
+      </h2>
+      <div class="flow-text mission-statement">
+        <p>
+          Fill out this form to submit a new benchmark result to the
+          website. The data will be submitted via a pull-request on
+          GitHub. Please go to
+          <a target="_blank" href="{{ site.links.github }}/pulls">
+             {{ site.links.repo }}
+          </a>
+          to view the pull-request. To upload a new benchmark result
+          with a manual pull request, please follow the
+          <a target="_blank"
+             href="{{ site.baseurl }}/simulations/upload">
+            manual upload instructions
+          </a>. This form can be populated from an existing result by
+          choosing a result from the
+          <a href="{{ site.baseurl }}/simulations/#simulations">
+            table of uploads
+          </a>
+          and then clicking on the "USE AS TEMPLATE FOR NEW
+          SIMULATION" button.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container top-bar small-buffer">
+  <div class="row small-buffer">
+    <div class="col s12 m12 l12 xl2">
+      <h5 class="sideheader">Upload Form</h5>
+    </div>
+    <div class="col s12 m12 l12 xl10">
+      <form name="simulation_form"
+            id="my_form"
+            method="POST"
+            action="{{ site.links.staticman_api }}">
+        <input name="options[redirect]"
+               type="hidden"
+               value="{{ site.links.github }}/pulls">
+
+        {% include form_author.html %}
+        {% include form_overview.html %}
+        {% include form_implementation.html %}
+        {% include form_hardware.html %}
+        {% include form_efficiency.html %}
+        {% include form_data.html %}
+
+        <div class="row top-bar-thin">
+          <div class="col s12">
+            <p>
+              <button class="btn waves-effect waves-light light-green darken-1"
+                      type="submit"
+                      name="action">
+                Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </p>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/js/upload_form.js"></script>
+
+<script>
+  $(document).ready(function() {
+  $('select').material_select();
+  });
+
+  $(document).ready(function() {
+  Materialize.updateTextFields();
+  });
+
+  $('.datepicker').pickadate({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 15, // Creates a dropdown of 15 years to control year
+  max: true
+  });
+</script>

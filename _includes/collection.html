@@ -1,0 +1,20 @@
+<div class="container top-bar top-buffer">
+  <div class="row small-buffer">
+    <div class="col s12 m12 l12 xl2">
+      <h5 class="sideheader">
+        {{ include.header }}
+      </h5>
+    </div>
+    <div class="col s12 m12 l12 xl10">
+      {% if include.comment %}
+        <div class="flow-text comment">
+          {{ include.comment | markdownify }}
+        </div>
+      {% endif %}
+      <ul class="collection" id="{{ include.tag }}">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/js/{{ include.js }}.js"></script>

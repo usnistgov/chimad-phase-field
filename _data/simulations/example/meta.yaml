@@ -1,0 +1,71 @@
+# CHiMaD Phase-Field Simulation submission YAML specification
+# All fields are requested, to give users a complete description
+# of your result. For a minimal example (only required fields),
+# consult  _data/simulations/example_minimal/meta.yaml
+
+---
+
+benchmark:
+  id: 1a  # REQUIRED
+  version: 1  # REQUIRED
+metadata: # REQUIRED
+  # Describe the runtime environment
+  summary: MPI parallel workstation benchmark with MMSP  # REQUIRED
+  author:
+    first: Trevor # REQUIRED
+    last: Keller  # REQUIRED
+    github_id: tkphd # REQUIRED
+    email: trevor.keller@nist.gov  # REQUIRED
+  timestamp: Thu, 22 Dec 2016 15:20:53 -0500  # REQUIRED
+  hardware:
+    # hardware details
+    acc_architecture: none # REQUIRED
+    cpu_architecture: x86_64  # REQUIRED
+    cores: 6  # REQUIRED
+    clock_rate:  3.50  # GHz REQUIRED
+    nodes: 1 # REQUIRED
+    parallel_model: distributed # REQUIRED
+  implementation:
+    name: mmsp # REQUIRED
+    container_url: http://docker.com/my_container
+    repo:
+      url: https://github.com/mesoscale/MMSP-spinodal-decomposition-benchmark/tree/master/periodic  # REQUIRED
+      version: "b949fbc4116f020db619fe1ccacbf8b13dfd5e32" #REQUIRED
+data:  # REQUIRED
+  # use Vega standard, see
+  # https://github.com/vega/vega/wiki/Data and
+  # https://vega.github.io/vega-lite/docs/data.html.
+  - name: timestep
+    values: 0.00195312
+  - name: free_energy
+    # CSV is the preferred format for free energy data, with two columns: time and free_energy.
+    url: https://gist.githubusercontent.com/tkphd/8659310fb61efba6c97df42e12382924/raw/98fcbed6c526092ec561dc11904c3754ccbfd880/mmsp_1a_wrksttn.csv
+    format:
+      type: csv
+      parse:
+        time: number
+        free_energy: number
+    transform:
+      - expr: datum.time
+        as: x
+        type: formula
+      - expr: datum.free_energy
+        as: y
+        type: formula
+    type: line
+  - name: run_time  # REQUIRED
+    values:
+      [
+        {
+          "sim_time": 53333.3,
+          "wall_time": 170618.87 # wall time, seconds
+        }
+      ]
+  - name: memory_usage  # REQUIRED
+    values:
+      [
+        {
+          "value": 27232,
+          "unit": KB
+        }
+      ]
